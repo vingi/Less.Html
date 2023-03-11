@@ -1,129 +1,33 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5749EA1F-89F8-4029-96BE-457170DE431A}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Less.Html</RootNamespace>
-    <AssemblyName>Less.Html</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\Less.Html.XML</DocumentationFile>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Less.Html.XML</DocumentationFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Less.Common, Version=1.0.94.26892, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Less.Common.1.0.94.1\lib\net35\Less.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Less.Log, Version=1.0.1.31036, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Less.Log.1.0.1.1\lib\net35\Less.Log.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=4.0.8.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.4.0.8\lib\net35\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Web" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Nodes\Document\DocumentContent.cs" />
-    <Compile Include="Nodes\Element\Indexes\IndexBase.cs" />
-    <Compile Include="StyleParser.cs" />
-    <Compile Include="Styles\CssInfo.cs" />
-    <Compile Include="Styles\Properties\Background.cs" />
-    <Compile Include="Styles\BlockCollection.cs" />
-    <Compile Include="Styles\Css.cs" />
-    <Compile Include="Styles\Block.cs" />
-    <Compile Include="CssInternal\Context.cs" />
-    <Compile Include="CssInternal\PropertyReader.cs" />
-    <Compile Include="Styles\Properties\BackgroundImage.cs" />
-    <Compile Include="Styles\Properties\Src\SrcValueCollection.cs" />
-    <Compile Include="Styles\Properties\Src\Src.cs" />
-    <Compile Include="Styles\Properties\Src\SrcValue.cs" />
-    <Compile Include="Styles\Property.cs" />
-    <Compile Include="Styles\PropertyCollection.cs" />
-    <Compile Include="Styles\Style.cs" />
-    <Compile Include="Styles\StyleCollection.cs" />
-    <Compile Include="CssParser.cs" />
-    <Compile Include="CssInternal\ReaderBase.cs" />
-    <Compile Include="CssInternal\SelectorReader.cs" />
-    <Compile Include="HtmlInternal\AttributeReader.cs" />
-    <Compile Include="HtmlInternal\CloseStyleReader.cs" />
-    <Compile Include="HtmlInternal\CloseScriptReader.cs" />
-    <Compile Include="HtmlInternal\Context.cs" />
-    <Compile Include="HtmlInternal\EndingReader.cs" />
-    <Compile Include="HtmlParser.cs" />
-    <Compile Include="HtmlInternal\ReaderBase.cs" />
-    <Compile Include="HtmlInternal\TagMark.cs" />
-    <Compile Include="HtmlInternal\TagReader.cs" />
-    <Compile Include="Nodes\Attr.cs" />
-    <Compile Include="Nodes\Comment.cs" />
-    <Compile Include="Nodes\Document\Document.cs" />
-    <Compile Include="Nodes\Element\Element.cs" />
-    <Compile Include="Nodes\ElementCollection.cs" />
-    <Compile Include="Nodes\Element\Indexes\IndexOnClass.cs" />
-    <Compile Include="Nodes\Element\Indexes\IndexOnId.cs" />
-    <Compile Include="Nodes\Element\Indexes\IndexOnName.cs" />
-    <Compile Include="Nodes\Element\Indexes\IndexOnTagName.cs" />
-    <Compile Include="Nodes\NamedNodeMap.cs" />
-    <Compile Include="Nodes\Node.cs" />
-    <Compile Include="Nodes\SelfCheckingException.cs" />
-    <Compile Include="Nodes\Text.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Query\QueryExtensions.cs" />
-    <Compile Include="Query\ElementExtensions.cs" />
-    <Compile Include="Query\NodeExtensions.cs" />
-    <Compile Include="SelectorParser\Filters\FilterByAttr.cs" />
-    <Compile Include="SelectorParser\AttrSelectorReader.cs" />
-    <Compile Include="SelectorParser\SelectorReader.cs" />
-    <Compile Include="SelectorParser\Context.cs" />
-    <Compile Include="SelectorParser\ElementFilter.cs" />
-    <Compile Include="SelectorParser\Filters\FilterByAll.cs" />
-    <Compile Include="SelectorParser\Filters\FilterByClass.cs" />
-    <Compile Include="SelectorParser\Filters\FilterById.cs" />
-    <Compile Include="SelectorParser\Filters\FilterByTagName.cs" />
-    <Compile Include="SelectorParser\Filters\FilterByOther.cs" />
-    <Compile Include="SelectorParser\ParamParser.cs" />
-    <Compile Include="SelectorParser\ReaderBase.cs" />
-    <Compile Include="SelectorParser\SelectorParamException.cs" />
-    <Compile Include="Query\Query.cs" />
-    <Compile Include="Query\Selector.cs" />
-    <Compile Include="Query\SelectorParam.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Less.Html.nuspec">
+    <None Update="Less.Html.nuspec">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.410601">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Less.Common\Less.Common.csproj" />
+  </ItemGroup>
 </Project>

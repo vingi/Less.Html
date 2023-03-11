@@ -2,7 +2,6 @@
 
 using Less.Text;
 using Less.Collection;
-using Less.Windows;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -193,15 +192,6 @@ namespace Less.Html
 
         static Node()
         {
-#if DEBUG
-            bool? self_checking = Config.GetAppSetting("Less.Html.SelfChecking").ToBool();
-
-            if (self_checking.IsNotNull())
-            {
-                Node.SelfChecking = self_checking.Value;
-            }
-#endif
-
             Node.Pattern = @"\s+|&nbsp;|&nbsp".ToRegex(RegexOptions.Compiled);
         }
 

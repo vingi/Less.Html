@@ -1,6 +1,5 @@
 ﻿//bibaoke.com
 
-using Less.Log;
 using Less.Text;
 using System;
 using System.Text;
@@ -43,11 +42,11 @@ namespace Less.Html
 #if DEBUG
                     if (!SelfChecking)
                     {
-                        AppLog.Write(new
-                        {
-                            this.ValueCache,
-                            StackTrace = new StackTrace().GetFrames().Select(i => i.GetMethod().Name)
-                        }, false);
+                        //AppLog.Write(new
+                        //{
+                        //    this.ValueCache,
+                        //    StackTrace = new StackTrace().GetFrames().Select(i => i.GetMethod().Name)
+                        //}, false);
                     }
 #endif
 
